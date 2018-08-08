@@ -1,0 +1,11 @@
+#!/usr/bin/python3
+
+import sys
+from lib.uas_emulator import UASEmulator
+
+
+if __name__ == "__main__":
+	uas = UASEmulator()
+
+	while(True):
+		pass
