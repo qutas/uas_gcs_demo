@@ -1,11 +1,23 @@
 #!/usr/bin/python3
 
 import sys
-from lib.uas_emulator import UASEmulator
+from lib.uas_gcs_demo.uas_manager import UASManager
+from lib.uas_gcs_demo.timer import UpdateTimer
 
+def main():
+	uas_name = "uas"
+	update_rate = 100 #Hz
+
+	uas = UASManager(uas_name)
+	timer = UpdateTimer(uas_name, update_rate, uas.update)
+
+	while True:
+		try:
+			timer.run()
+		except KeyboardInterrupt:
+			uas.shutdown()
+			exit()
 
 if __name__ == "__main__":
-	uas = UASEmulator()
+	main()
 
-	while(True):
-		pass
