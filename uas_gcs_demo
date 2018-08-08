@@ -1,8 +1,11 @@
-#!/usr/bin/python3
+#!/usr/bin/env python2
 
 import sys
-from lib.uas_gcs_demo.uas_manager import UASManager
-from lib.uas_gcs_demo.timer import UpdateTimer
+
+sys.path.append('./lib')
+
+from uas_emulator.uas_manager import UASManager
+from uas_emulator.timer import UpdateTimer
 
 def main():
 	uas_name = "uas"
